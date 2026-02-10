@@ -1,0 +1,7 @@
+{
+  "name": "FYp v2",
+  "description": "An interactive, high-fidelity prototype of an AI-driven smart parking management system featuring license plate detection, real-time slot monitoring, and automated billing.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
