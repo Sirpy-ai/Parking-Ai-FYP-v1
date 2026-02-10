@@ -64,7 +64,6 @@ const PlateDetectionStep: React.FC<PlateDetectionStepProps> = ({ onNext }) => {
       
       // Get base64 data
       const dataUrl = canvas.toDataURL('image/jpeg');
-      // Convert dataURL to Blob for consistency or just pass base64 string
       // Extract base64 string for Gemini
       const base64 = dataUrl.split(',')[1];
       
@@ -98,7 +97,9 @@ const PlateDetectionStep: React.FC<PlateDetectionStepProps> = ({ onNext }) => {
             }
         });
 
+        // Use .text property as per SDK v1.0+ guidelines
         const text = response.text?.trim() || "NO PLATE";
+        
         if (text === "NO PLATE" || text.length < 4) {
              setError("Could not detect a valid plate. Please try again.");
         } else {
